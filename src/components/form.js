@@ -21,18 +21,18 @@ function Form({ addNew }) {
       maskedNRIC: maskedNRIC.value,
       rankName: rankName.value,
       sexAge: sexAge.value,
-      briefdescription: briefdescription.value,
-      traveloverseas: traveloverseas.value,
-      closecontact: closecontact.value,
+      briefDescription: briefDescription.value,
+      travelOverseas: travelOverseas.value,
+      closeContact: closeContact.value,
       dormitory: dormitory.value,
-      highriskarea: highriskarea.value,
-      prolongedari: prolongedari.value,
-      suspectedpneumonia: suspectedpneumonia.value,
+      highRiskArea: highRiskArea.value,
+      prolongedAri: prolongedAri.value,
+      suspectedPneumonia: suspectedPneumonia.value,
       currentStatus: currentStatus.value,
       incidentTime: incidentTime.value,
       incidentLocation: incidentLocation.value,
       followUp: followUp.value,
-      civilianmaskedNRIC: civilianmaskedNRIC.value,
+      civilianMaskedNRIC: civilianMaskedNRIC.value,
       civilianName: civilianName.value,
       civilianAge: civilianAge.value,
       civilianGender: civilianGender.value,
@@ -44,9 +44,9 @@ function Form({ addNew }) {
   };
 
   const currentTime = Radio(`${CurrentTime}`);
-  const unit = Radio();
+  const unit = Radio('');
   const company = Radio('XXX COY');
-  const platoon = Radio();
+  const platoon = Radio('');
 
   const serviceStatus = Radio('NSF');
   const elevenLinerStatus = Radio('NEW');
@@ -55,21 +55,21 @@ function Form({ addNew }) {
   const maskedNRIC = Radio('TXXXX123A');
   const rankName = Radio('PTE JOHN DOE');
   const sexAge = Radio('M/19');
-  const briefdescription = Radio(`On ${Newdate},\nAt ${Number(CurrentTime)} HRS, Serviceman started experiencing runny nose.\nAt XXXXHRS, Serviceman woke up with runny nose and headache. `);
+  const briefDescription = Radio(`On ${Newdate},\nAt ${Number(CurrentTime)} HRS, Serviceman started experiencing runny nose.\nAt XXXXHRS, Serviceman woke up with runny nose and headache. `);
 
-  const traveloverseas = Radio('NIL');
-  const closecontact = Radio('NIL');
+  const travelOverseas = Radio('NIL');
+  const closeContact = Radio('NIL');
   const dormitory = Radio('NIL');
-  const highriskarea = Radio('NIL');
-  const prolongedari = Radio('NIL');
-  const suspectedpneumonia = Radio('NIL');
+  const highRiskArea = Radio('NIL');
+  const prolongedAri = Radio('NIL');
+  const suspectedPneumonia = Radio('NIL');
 
   const currentStatus = Radio('Reporting Sick');
   const incidentTime = Radio(`${Newdate}, ${Number(CurrentTime)} HRS`);
   const incidentLocation = Radio('XXXX CAMP');
   const followUp = Radio('Unit will monitor the serviceman’s condition and to return to camp upon completion of MC.');
 
-  const civilianmaskedNRIC = Radio('-');
+  const civilianMaskedNRIC = Radio('-');
   const civilianName = Radio('-');
   const civilianAge = Radio('-');
   const civilianGender = Radio('-');
@@ -109,7 +109,43 @@ function Form({ addNew }) {
       >DO NOT REFRESH THIS PAGE</Text>
     </Div>
 
-    <Upload/>
+    <Upload
+      currentTime={currentTime}
+      unit={unit}
+      company={company}
+      platoon={platoon}
+
+      serviceStatus={serviceStatus}
+      elevenLinerStatus={elevenLinerStatus}
+      natureOfIncident={natureOfIncident}
+
+      maskedNRIC={maskedNRIC}
+      rankName={rankName}
+      sexAge={sexAge}
+      briefDescription={briefDescription}
+
+      travelOverseas={travelOverseas}
+      closeContact={closeContact}
+      dormitory={dormitory}
+      highRiskArea={highRiskArea}
+      prolongedAri={prolongedAri}
+      suspectedPneumonia={suspectedPneumonia}
+
+      currentStatus={currentStatus}
+      incidentTime={incidentTime}
+      incidentLocation={incidentLocation}
+      followUp={followUp}
+
+      civilianMaskedNRIC={civilianMaskedNRIC}
+      civilianName={civilianName}
+      civilianAge={civilianAge}
+      civilianGender={civilianGender}
+      civilianContactNumber={civilianContactNumber}
+      
+      pocRankName={pocRankName}
+      pocAppointment={pocAppointment}
+      pocContactNumber={pocContactNumber}
+    />
 
       <Div p="1rem">
         <Text>Current Time</Text>
@@ -211,15 +247,15 @@ function Form({ addNew }) {
 
       <Div p="1rem">
         <Text>Brief Description of Incident</Text>
-        <Textarea value={briefdescription.value} onChange={(event) => { briefdescription.onClick(event.target.value.toUpperCase()); }} />
+        <Textarea value={briefDescription.value} onChange={(event) => { briefDescription.onClick(event.target.value.toUpperCase()); }} />
       </Div>
 
       <Div d="flex" p="1rem">
         <Text>Travel overseas in the past 14 Days</Text>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => traveloverseas.onClick('YES')}
-            checked={traveloverseas.value === 'YES'}
+            onChange={() => travelOverseas.onClick('YES')}
+            checked={travelOverseas.value === 'YES'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -228,8 +264,8 @@ function Form({ addNew }) {
         </Label>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => traveloverseas.onClick('NIL')}
-            checked={traveloverseas.value === 'NIL'}
+            onChange={() => travelOverseas.onClick('NIL')}
+            checked={travelOverseas.value === 'NIL'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -242,8 +278,8 @@ function Form({ addNew }) {
         <Text>Close contact with a confirmed case</Text>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => closecontact.onClick('YES')}
-            checked={closecontact.value === 'YES'}
+            onChange={() => closeContact.onClick('YES')}
+            checked={closeContact.value === 'YES'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -252,8 +288,8 @@ function Form({ addNew }) {
         </Label>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => closecontact.onClick('NIL')}
-            checked={closecontact.value === 'NIL'}
+            onChange={() => closeContact.onClick('NIL')}
+            checked={closeContact.value === 'NIL'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -290,8 +326,8 @@ function Form({ addNew }) {
         <Text>Works in a High Risk Area</Text>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => highriskarea.onClick('YES')}
-            checked={highriskarea.value === 'YES'}
+            onChange={() => highRiskArea.onClick('YES')}
+            checked={highRiskArea.value === 'YES'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -300,8 +336,8 @@ function Form({ addNew }) {
         </Label>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => highriskarea.onClick('NIL')}
-            checked={highriskarea.value === 'NIL'}
+            onChange={() => highRiskArea.onClick('NIL')}
+            checked={highRiskArea.value === 'NIL'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -314,8 +350,8 @@ function Form({ addNew }) {
         <Text>Prolonged ARI with fever above 37.5 for 4 days and above</Text>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => prolongedari.onClick('YES')}
-            checked={prolongedari.value === 'YES'}
+            onChange={() => prolongedAri.onClick('YES')}
+            checked={prolongedAri.value === 'YES'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -324,8 +360,8 @@ function Form({ addNew }) {
         </Label>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => prolongedari.onClick('NIL')}
-            checked={prolongedari.value === 'NIL'}
+            onChange={() => prolongedAri.onClick('NIL')}
+            checked={prolongedAri.value === 'NIL'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -338,8 +374,8 @@ function Form({ addNew }) {
         <Text>Suspected Pneumonia</Text>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => suspectedpneumonia.onClick('YES')}
-            checked={suspectedpneumonia.value === 'YES'}
+            onChange={() => suspectedPneumonia.onClick('YES')}
+            checked={suspectedPneumonia.value === 'YES'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -348,8 +384,8 @@ function Form({ addNew }) {
         </Label>
         <Label align="center" textWeight="600" m={{ b: '0.5rem' }}>
           <Radiobox
-            onChange={() => suspectedpneumonia.onClick('NIL')}
-            checked={suspectedpneumonia.value === 'NIL'}
+            onChange={() => suspectedPneumonia.onClick('NIL')}
+            checked={suspectedPneumonia.value === 'NIL'}
             inactiveColor="danger400"
             activeColor="danger700"
             size="22px"
@@ -382,7 +418,7 @@ function Form({ addNew }) {
 
       <Div p="1rem">
         <Text>Masked NRIC</Text>
-        <Input value={civilianmaskedNRIC.value} onChange={(event) => { civilianmaskedNRIC.onClick(event.target.value.toUpperCase()); }} placeholder="TXXXX123A" />
+        <Input value={civilianMaskedNRIC.value} onChange={(event) => { civilianMaskedNRIC.onClick(event.target.value.toUpperCase()); }} placeholder="TXXXX123A" />
       </Div>
 
       <Div p="1rem">

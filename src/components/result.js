@@ -8,19 +8,24 @@ const Result = ({
   unit,
   company,
   platoon,
+  serviceStatus,
   elevenLinerStatus,
   natureOfIncident,
   maskedNRIC,
   rankName,
-  serviceStatus,
   sexAge,
-  briefdescription,
-  incidentLocation,
-  suspectedpneumonia,
+  briefDescription,
+  travelOverseas,
+  closeContact,
+  dormitory,
+  highRiskArea,
+  prolongedAri,
+  suspectedPneumonia,
   currentStatus,
-  followUp,
   incidentTime,
-  civilianmaskedNRIC,
+  incidentLocation,
+  followUp,
+  civilianMaskedNRIC,
   civilianName,
   civilianAge,
   civilianGender,
@@ -28,7 +33,8 @@ const Result = ({
   pocRankName,
   pocAppointment,
   pocContactNumber,
-  downloadLink
+  downloadLink,
+  
 
 }) => {
   const history = useHistory()
@@ -86,16 +92,16 @@ const Result = ({
     </Text>
     <Text>
       3) *Brief Description of Incident*: <br/>
-      {briefdescription}
+      {briefDescription}
     </Text>
     <Text>
       *Other Details* <br/>
-      - Travel overseas in the past 14 Days: NIL <br/>
-      - Close contact with a confirmed case: NIL <br/>
-      - Stay in or near a foreign worker dormitory: NIL <br/>
-      - Works in a High Risk Area: NIL <br/>
-      - Prolonged ARI with fever above 37.5 for 4 days and above: NIL <br/>
-      - Suspected Pneumonia: {suspectedpneumonia} 
+      - Travel overseas in the past 14 Days: {travelOverseas} <br/>
+      - Close contact with a confirmed case: {closeContact} <br/>
+      - Stay in or near a foreign worker dormitory: {dormitory} <br/>
+      - Works in a High Risk Area: {highRiskArea} <br/>
+      - Prolonged ARI with fever above 37.5 for 4 days and above: {prolongedAri} <br/>
+      - Suspected Pneumonia: {suspectedPneumonia} 
     </Text>
     <Text>
       4) *Current Status*: {currentStatus}
@@ -112,7 +118,7 @@ const Result = ({
     </Text>
     <Text>
       8) *Details/Particulars of civilian involved, if any*: <br/>
-      NRIC (Masked): {civilianmaskedNRIC} <br/>
+      NRIC (Masked): {civilianMaskedNRIC} <br/>
       Name: {civilianName} <br/>
       Age: {civilianAge} <br/>
       Gender: {civilianGender} <br/>

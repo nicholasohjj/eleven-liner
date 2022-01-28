@@ -31,26 +31,38 @@ const App = () => {
           unit={currentinfo.unit}
           company={currentinfo.company}
           platoon={currentinfo.platoon}
+
+          serviceStatus={currentinfo.serviceStatus}
           elevenLinerStatus={currentinfo.elevenLinerStatus}
+
           natureOfIncident={currentinfo.natureOfIncident}
           maskedNRIC={currentinfo.maskedNRIC}
           rankName={currentinfo.rankName}
-          serviceStatus={currentinfo.serviceStatus}
           sexAge={currentinfo.sexAge}
-          briefdescription={currentinfo.briefdescription}
-          suspectedpneumonia={currentinfo.suspectedpneumonia}
-          incidentLocation={currentinfo.incidentLocation}
+          briefDescription={currentinfo.briefDescription}
+
+          travelOverseas = {currentinfo.travelOverseas}
+          closeContact = {currentinfo.closeContact}
+          dormitory = {currentinfo.dormitory}
+          highRiskArea = {currentinfo.highRiskArea}
+          prolongedAri = {currentinfo.prolongedAri}
+          suspectedPneumonia={currentinfo.suspectedPneumonia}
+          
           currentStatus={currentinfo.currentStatus}
-          followUp={currentinfo.followUp}
           incidentTime={currentinfo.incidentTime}
-          civilianmaskedNRIC={currentinfo.civilianmaskedNRIC}
+          incidentLocation={currentinfo.incidentLocation}
+          followUp={currentinfo.followUp}
+
+          civilianMaskedNRIC={currentinfo.civilianMaskedNRIC}
           civilianName={currentinfo.civilianName}
           civilianAge={currentinfo.civilianAge}
           civilianGender={currentinfo.civilianGender}
           civilianContactNumber={currentinfo.civilianContactNumber}
+
           pocRankName={currentinfo.pocRankName}
           pocAppointment={currentinfo.pocAppointment}
           pocContactNumber={currentinfo.pocContactNumber}
+
           downloadLink={downloadLink}
         />  
       </Route>
