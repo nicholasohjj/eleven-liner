@@ -25,7 +25,7 @@ const Upload = () => {
         flexDir="column"
         p="1rem"
         >
-        <Text textWeight={{ xs: '400', md: '500' }}>Upload existing raw data here (to do)</Text>
+        <Text textWeight={{ xs: '400', md: '500' }}>Upload existing raw data here (.txt file) (to do)</Text>
          <Input type="file"
         name="fileupload"
        accept=".txt"
