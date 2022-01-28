@@ -5,16 +5,21 @@ import {
 } from 'react-router-dom';
 import Form from './components/form'
 import Result from './components/result';
+import { Button } from 'atomize';
 
-function App() {
+const App = () => {
   const history = useHistory();
-  const [currentinfo, setcurrentinfo] = useState([]);
+  const [currentinfo, setcurrentinfo] = useState('');
 
   const addNew = (info) => {
     setcurrentinfo(info);
     console.log(currentinfo);
     history.push('/result');
   };
+
+  const data = new Blob([JSON.stringify(currentinfo)], { type: 'text/javascript' })
+  const downloadLink = window.URL.createObjectURL(data)
+
 
   return (
     <Switch>
@@ -46,7 +51,8 @@ function App() {
           pocRankName={currentinfo.pocRankName}
           pocAppointment={currentinfo.pocAppointment}
           pocContactNumber={currentinfo.pocContactNumber}
-        />
+          downloadLink={downloadLink}
+        />  
       </Route>
       <Route path="/">
         <Form addNew={addNew} />

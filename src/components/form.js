@@ -80,7 +80,7 @@ function Form({ addNew }) {
 
   return (
     <Div
-      bg="gray300"
+      bg="info300"
       d={{ xs: 'block', md: 'flex' }}
       align={{ xs: 'space-around', lg: 'center' }}
       flexWrap="wrap"
@@ -89,7 +89,27 @@ function Form({ addNew }) {
 
       p="1rem"
     >
+      <Div
+      bg="info300"
+      d={{ xs: 'block', md: 'flex' }}
+      align={{ xs: 'space-around', lg: 'center' }}
+      flexWrap="wrap"
+      m="1rem"
+      flexDir="column"
 
+      p="1rem"
+    >
+      <Text
+      textSize="heading"
+      textWeight={{ xs: '400', md: '500' }}
+
+      >Eleven Liner Form</Text>
+      <Text
+      textSize="title"
+      textWeight="300"
+      >DO NOT REFRESH THIS PAGE</Text>
+    </Div>
+    
       <Div p="1rem">
         <Text>Current Time</Text>
         <Input value={currentTime.value} onChange={(event) => { currentTime.onClick(event.target.value.toUpperCase()); }} placeholder="Current Time" />

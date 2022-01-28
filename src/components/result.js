@@ -1,7 +1,9 @@
-import {React, useState} from "react";
-import {Button, Div, Text } from "atomize";
+import {React} from "react";
+import {Button, Div, Text, Anchor} from "atomize";
 import {useHistory} from 'react-router-dom'
-import Form from "./form";
+
+
+
 const Result = ({
   currentDate,
   currentTime,
@@ -27,45 +29,37 @@ const Result = ({
     civilianContactNumber,
     pocRankName,
     pocAppointment,
-    pocContactNumber
+    pocContactNumber,
+    downloadLink
 
 }) => {
-
+  
     const history = useHistory()
-    const [copied, setcopied] = useState(false)
-
-    const copyTextToClipboard = (text) => {
-        if ('clipboard' in navigator) {
-          return navigator.clipboard.writeText(text);
-        } else {
-          return document.execCommand('copy', true, text);
-        }
-      }
-
-    const HandleCopyClick = () => {
-        console.log(Form)
-        copyTextToClipboard(Result)
-        .then(() => {
-        setcopied(true);
-        setTimeout(() => {
-        setcopied(false);
-        }, 1500);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
 
     return (
         <>
         <Div
-        bg="gray200"
+        bg="success300"
+        d={{ xs: "block", md: "flex" }}
+        flexWrap="wrap"
+        m="1rem"
+        rounded="sm"
+        flexDir="column"
+        p="1rem"
+        >
+        
+        <Div
+        bg="gray400"
         d={{ xs: "block", md: "flex" }}
         flexWrap="wrap"
         m="1rem"
         flexDir="column"
+        rounded="sm"
+        align ='center'
         p="1rem"
         >
+          <Text>DO NOT REFRESH THE PAGE!</Text>
+        </Div>
             <Text>
                 {currentDate} {currentTime} Hrs
             </Text>
@@ -140,11 +134,10 @@ const Result = ({
             </Text>
             
         <Button onClick={()=> history.push('/')}>Back to Form</Button>
-        <Button onClick={HandleCopyClick}>
-          <span>{copied ? 'Copied!' : 'Copy'}</span>
-        </Button>
+        <Anchor flexWrap="wrap" m="1rem" flexDir="column" p="1rem" download='list.txt' href={downloadLink}>
+          <Button >Download raw data</Button>
+        </Anchor>
         </Div>
-
         </>
     )
 }
