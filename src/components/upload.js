@@ -1,8 +1,7 @@
-import { Button, Div, Input, Text, Notification, Icon } from "atomize"
+import { Button, Div, Input, Text } from "atomize"
 import React from "react"
 import { Setinput } from "../hooks"
 
-const success = Setinput(false)
 
 const Upload = ({
     currentTime,
@@ -35,30 +34,6 @@ const Upload = ({
     pocAppointment,
     pocContactNumber
 }) => {
-
-    const UploadNotification = () => {
-
-        return (
-            <>
-            <Notification
-              bg="success700"
-              isOpen={success.value}
-              onClose={() => success.onClick(false)}
-              prefix={
-                <Icon
-                  name="Success"
-                  color="white"
-                  size="18px"
-                  m={{ r: "0.5rem" }}
-                />
-              }
-            >
-              This is a success message
-            </Notification>
-            </>
-        )
-    
-    }
 
     const result = Setinput()
 
@@ -107,12 +82,6 @@ const Upload = ({
         pocRankName.onClick(result.value.rankName)
         pocAppointment.onClick(result.value.pocAppointment)
         pocContactNumber.onClick(result.value.pocContactNumber)
-
-        success.onClick(true)
-
-        return (
-            <UploadNotification success={success.value}/>
-        )
     }
     return (
         <Div
