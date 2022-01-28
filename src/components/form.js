@@ -4,7 +4,7 @@ import { Setinput } from '../hooks';
 import CurrentTime from './time';
 import Newdate from './reusable/newdate';
 import Upload from './upload';
-import { SubmitModal } from './modal';
+import { SubmitModal } from './modals/modal';
 
 const Form = ({ addNew }) => {
   

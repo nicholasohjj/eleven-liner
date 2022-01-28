@@ -1,7 +1,7 @@
 import {React} from "react";
 import {Button, Div, Text, Anchor} from "atomize";
 import {useHistory} from 'react-router-dom'
-import { ReturnModal } from "./modal";
+import { ReturnModal } from "./modals/modal";
 import { Setinput } from "../hooks";
 
 const Result = ({
@@ -176,7 +176,7 @@ const Result = ({
       
     <Anchor m="1rem"  download={filename} href={downloadLink}>
       <Button>
-        <Text>Download raw data</Text>
+        <Text>Download raw data to edit/update</Text>
       </Button>
     </Anchor>
 </Div>
