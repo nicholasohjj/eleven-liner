@@ -1,6 +1,8 @@
 import {React} from "react";
 import {Button, Div, Text, Anchor} from "atomize";
 import {useHistory} from 'react-router-dom'
+import { ReturnModal } from "./modal";
+import { Setinput } from "../hooks";
 
 const Result = ({
   currentDate,
@@ -38,6 +40,16 @@ const Result = ({
 
 }) => {
   const history = useHistory()
+  const showModal = Setinput(false)
+
+  const Handlesubmit = () => {
+    showModal.onClick(false)
+    history.push('/')
+    window.scroll(0,0)
+  }
+
+  const filename = '`test.txt`'
+
   
   return (
   <Div
@@ -144,16 +156,27 @@ const Result = ({
       {pocAppointment} <br/>
       {pocContactNumber}
     </Text>
-            
-    <Button onClick={()=> {
-      history.push('/')
-      window.scroll(0,0)
-      }}>
-      Back to Form
-    </Button>
 
-    <Anchor flexWrap="wrap" m="1rem" flexDir="column" p="1rem" download='list.txt' href={downloadLink}>
-      <Button >Download raw data</Button>
+    <Button
+          bg="success700"
+          hoverBg="success600"
+          rounded="md"
+          m={{ b: "1rem" }}
+          onClick={()=> showModal.onClick(true)}
+        >
+          Resubmit Form
+        </Button>
+        <ReturnModal
+          isOpen={showModal.value}
+          onClose={()=> showModal.onClick(false)}
+          Handlesubmit={Handlesubmit}
+          downloadLink={downloadLink}
+        />
+      
+    <Anchor flexWrap="wrap" m="1rem" flexDir="column" p="1rem" download={filename} href={downloadLink}>
+      <Button >
+        <Text>Download raw data for future edits</Text>
+      </Button>
     </Anchor>
   </Div>
   )

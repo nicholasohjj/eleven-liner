@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Radio = (defaultValue) => {
+const Setinput = (defaultValue) => {
   const [value, setvalue] = useState(defaultValue);
 
   const onClick = (newvalue) => {
@@ -13,4 +13,4 @@ const Radio = (defaultValue) => {
   };
 };
 
-export { Radio };
+export { Setinput };

@@ -1,14 +1,15 @@
 import React from 'react';
-import {
-  Button, Div, Text, Input, Label, Radiobox, Textarea,
-} from 'atomize';
-import { Radio } from '../hooks';
+import {Button, Div, Text, Input, Label, Radiobox, Textarea,} from 'atomize';
+import { Setinput } from '../hooks';
 import CurrentTime from './time';
 import Newdate from './reusable/newdate';
 import Upload from './upload';
+import { SubmitModal } from './modal';
 
-function Form({ addNew }) {
+const Form = ({ addNew }) => {
+  
   const Handlesubmit = () => {
+    showModal.onClick(false)
     addNew({
       currentDate: Newdate,
       currentTime: currentTime.value,
@@ -43,41 +44,43 @@ function Form({ addNew }) {
     });
   };
 
-  const currentTime = Radio(`${CurrentTime}`);
-  const unit = Radio('');
-  const company = Radio('XXX COY');
-  const platoon = Radio('');
+  const currentTime = Setinput(`${CurrentTime}`);
+  const unit = Setinput('');
+  const company = Setinput('XXX COY');
+  const platoon = Setinput('');
 
-  const serviceStatus = Radio('NSF');
-  const elevenLinerStatus = Radio('NEW');
+  const serviceStatus = Setinput('NSF');
+  const elevenLinerStatus = Setinput('NEW');
 
-  const natureOfIncident = Radio('TRAINING RELATED\nRUNNY NOSE\nFEVER');
-  const maskedNRIC = Radio('TXXXX123A');
-  const rankName = Radio('PTE JOHN DOE');
-  const sexAge = Radio('M/19');
-  const briefDescription = Radio(`On ${Newdate},\nAt ${Number(CurrentTime)} HRS, Serviceman started experiencing runny nose.\nAt XXXXHRS, Serviceman woke up with runny nose and headache. `);
+  const natureOfIncident = Setinput('TRAINING RELATED\nRUNNY NOSE\nFEVER');
+  const maskedNRIC = Setinput('TXXXX123A');
+  const rankName = Setinput('PTE JOHN DOE');
+  const sexAge = Setinput('M/19');
+  const briefDescription = Setinput(`On ${Newdate},\nAt ${Number(CurrentTime)} HRS, Serviceman started experiencing runny nose.\nAt XXXXHRS, Serviceman woke up with runny nose and headache. `);
 
-  const travelOverseas = Radio('NIL');
-  const closeContact = Radio('NIL');
-  const dormitory = Radio('NIL');
-  const highRiskArea = Radio('NIL');
-  const prolongedAri = Radio('NIL');
-  const suspectedPneumonia = Radio('NIL');
+  const travelOverseas = Setinput('NIL');
+  const closeContact = Setinput('NIL');
+  const dormitory = Setinput('NIL');
+  const highRiskArea = Setinput('NIL');
+  const prolongedAri = Setinput('NIL');
+  const suspectedPneumonia = Setinput('NIL');
 
-  const currentStatus = Radio('Reporting Sick');
-  const incidentTime = Radio(`${Newdate}, ${Number(CurrentTime)} HRS`);
-  const incidentLocation = Radio('XXXX CAMP');
-  const followUp = Radio('Unit will monitor the serviceman’s condition and to return to camp upon completion of MC.');
+  const currentStatus = Setinput('Reporting Sick');
+  const incidentTime = Setinput(`${Newdate}, ${Number(CurrentTime)} HRS`);
+  const incidentLocation = Setinput('XXXX CAMP');
+  const followUp = Setinput('Unit will monitor the serviceman’s condition and to return to camp upon completion of MC.');
 
-  const civilianMaskedNRIC = Radio('-');
-  const civilianName = Radio('-');
-  const civilianAge = Radio('-');
-  const civilianGender = Radio('-');
-  const civilianContactNumber = Radio('-');
+  const civilianMaskedNRIC = Setinput('-');
+  const civilianName = Setinput('-');
+  const civilianAge = Setinput('-');
+  const civilianGender = Setinput('-');
+  const civilianContactNumber = Setinput('-');
 
-  const pocRankName = Radio('-');
-  const pocAppointment = Radio('-');
-  const pocContactNumber = Radio('-');
+  const pocRankName = Setinput('-');
+  const pocAppointment = Setinput('-');
+  const pocContactNumber = Setinput('-');
+
+  const showModal = Setinput(false)
 
   return (
     <Div
@@ -459,16 +462,19 @@ function Form({ addNew }) {
       </Div>
 
       <Button
-        onClick={Handlesubmit}
-        bg="warning700"
-        hoverBg="warning800"
-        rounded="circle"
-        p={{ r: '1.5rem', l: '1rem' }}
-        shadow="3"
-        hoverShadow="4"
-      >
-        Submit
-      </Button>
+          bg="info700"
+          hoverBg="info600"
+          rounded="md"
+          m={{ b: "1rem" }}
+          onClick={()=> showModal.onClick(true)}
+        >
+          Submit
+        </Button>
+        <SubmitModal
+          isOpen={showModal.value}
+          onClose={()=> showModal.onClick(false)}
+          Handlesubmit={Handlesubmit}
+        />
     </Div>
   );
 }

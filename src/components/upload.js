@@ -1,6 +1,6 @@
 import { Button, Div, Input, Text } from "atomize"
 import React from "react"
-import { Radio } from "../hooks"
+import { Setinput } from "../hooks"
 
 const Upload = ({
     currentTime,
@@ -34,7 +34,7 @@ const Upload = ({
     pocContactNumber
 }) => {
 
-    const result = Radio()
+    const result = Setinput()
 
     const Handlechange = (event) => {
         const file = event.target.files[0]
