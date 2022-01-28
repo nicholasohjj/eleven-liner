@@ -14,6 +14,7 @@ const App = () => {
     setcurrentinfo(info);
     console.log(currentinfo);
     history.push('/result');
+    window.scroll(0,0)
   };
 
   const data = new Blob([JSON.stringify(currentinfo)], { type: 'text/javascript' })

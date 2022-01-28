@@ -5,6 +5,7 @@ import {
 import { Radio } from '../hooks';
 import CurrentTime from './time';
 import Newdate from './reusable/newdate';
+import Upload from './upload';
 
 function Form({ addNew }) {
   const Handlesubmit = () => {
@@ -82,17 +83,15 @@ function Form({ addNew }) {
     <Div
       bg="info300"
       d={{ xs: 'block', md: 'flex' }}
-      align={{ xs: 'space-around', lg: 'center' }}
       flexWrap="wrap"
       m="1rem"
-      flexDir="column"
       rounded="lg"
+      flexDir="column"
       p="1rem"
     >
       <Div
-      bg="info300"
+      bg="info400"
       d={{ xs: 'block', md: 'flex' }}
-      align={{ xs: 'space-around', lg: 'center' }}
       flexWrap="wrap"
       m="1rem"
       flexDir="column"
@@ -109,6 +108,8 @@ function Form({ addNew }) {
       textWeight="300"
       >DO NOT REFRESH THIS PAGE</Text>
     </Div>
+
+    <Upload/>
 
       <Div p="1rem">
         <Text>Current Time</Text>
