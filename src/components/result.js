@@ -43,23 +43,31 @@ const Result = ({
         d={{ xs: "block", md: "flex" }}
         flexWrap="wrap"
         m="1rem"
-        rounded="sm"
+        rounded="lg"
         flexDir="column"
         p="1rem"
         >
         
         <Div
-        bg="gray400"
-        d={{ xs: "block", md: "flex" }}
-        flexWrap="wrap"
-        m="1rem"
-        flexDir="column"
-        rounded="sm"
-        align ='center'
-        p="1rem"
-        >
-          <Text>DO NOT REFRESH THE PAGE!</Text>
-        </Div>
+      bg="success400"
+      d={{ xs: 'block', md: 'flex' }}
+      align={{ xs: 'space-around', lg: 'center' }}
+      flexWrap="wrap"
+      m="1rem"
+      flexDir="column"
+      rounded="lg"
+      p="1rem"
+    >
+      <Text
+      textSize="heading"
+      textWeight={{ xs: '400', md: '500' }}
+
+      >Results</Text>
+      <Text
+      textSize="title"
+      textWeight="300"
+      >DO NOT REFRESH THIS PAGE</Text>
+    </Div>
             <Text>
                 {currentDate} {currentTime} Hrs
             </Text>

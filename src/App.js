@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import Form from './components/form'
 import Result from './components/result';
-import { Button } from 'atomize';
 
 const App = () => {
   const history = useHistory();

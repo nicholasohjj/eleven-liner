@@ -86,7 +86,7 @@ function Form({ addNew }) {
       flexWrap="wrap"
       m="1rem"
       flexDir="column"
-
+      rounded="lg"
       p="1rem"
     >
       <Div
@@ -96,7 +96,7 @@ function Form({ addNew }) {
       flexWrap="wrap"
       m="1rem"
       flexDir="column"
-
+      rounded="lg"
       p="1rem"
     >
       <Text
@@ -109,7 +109,7 @@ function Form({ addNew }) {
       textWeight="300"
       >DO NOT REFRESH THIS PAGE</Text>
     </Div>
-    
+
       <Div p="1rem">
         <Text>Current Time</Text>
         <Input value={currentTime.value} onChange={(event) => { currentTime.onClick(event.target.value.toUpperCase()); }} placeholder="Current Time" />
