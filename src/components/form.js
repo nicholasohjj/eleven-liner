@@ -109,7 +109,7 @@ const Form = ({ addNew }) => {
       <Text
       textSize="title"
       textWeight="300"
-      >DO NOT REFRESH THIS PAGE</Text>
+      >Do not refresh this page until form has been submitted.</Text>
     </Div>
 
     <Upload
@@ -149,6 +149,10 @@ const Form = ({ addNew }) => {
       pocAppointment={pocAppointment}
       pocContactNumber={pocContactNumber}
     />
+      <Text
+        textWeight="500"
+        textSize="subheader"
+      >Details/Particulars</Text>
 
       <Div p="1rem">
         <Text>Current Time</Text>
@@ -417,7 +421,10 @@ const Form = ({ addNew }) => {
         <Textarea value={followUp.value} onChange={(event) => { followUp.onClick(event.target.value.toUpperCase()); }} placeholder="Unit will monitor the serviceman’s condition and to return to camp upon completion of MC. " />
       </Div>
 
-      <Text>Details/Particulars of civilian involved, if any</Text>
+      <Text
+        textWeight="500"
+        textSize="subheader"
+      >Details/Particulars of civilian involved, if any</Text>
 
       <Div p="1rem">
         <Text>Masked NRIC</Text>
@@ -444,7 +451,10 @@ const Form = ({ addNew }) => {
         <Input value={civilianContactNumber.value} onChange={(event) => { civilianContactNumber.onClick(event.target.value.toUpperCase()); }} placeholder="98765432" />
       </Div>
 
-      <Text>Details/Particulars of Point of Contact</Text>
+      <Text
+        textWeight="500"
+        textSize="subheader"
+      >Details/Particulars of Point of Contact</Text>
 
       <Div p="1rem">
         <Text>Rank/Name </Text>

@@ -48,7 +48,7 @@ const Result = ({
     window.scroll(0,0)
   }
 
-  const filename = '`test.txt`'
+  const filename = `${rankName}_${currentDate}_${currentTime}.txt`
 
   
   return (
@@ -81,7 +81,7 @@ const Result = ({
       textSize="title"
       textWeight="300"
       >
-        DO NOT REFRESH THIS PAGE
+        Do not refresh this page until results have been copied.
       </Text>
     </Div>
     <Text>
@@ -156,28 +156,31 @@ const Result = ({
       {pocAppointment} <br/>
       {pocContactNumber}
     </Text>
-
-    <Button
-          bg="success700"
-          hoverBg="success600"
-          rounded="md"
-          m={{ b: "1rem" }}
-          onClick={()=> showModal.onClick(true)}
-        >
-          Resubmit Form
-        </Button>
-        <ReturnModal
-          isOpen={showModal.value}
-          onClose={()=> showModal.onClick(false)}
-          Handlesubmit={Handlesubmit}
-          downloadLink={downloadLink}
-        />
+<Div d={{ xs: 'block', md: 'flex' }} m="1rem" flexWrap="wrap">
+<Button
+      bg="success700"
+      hoverBg="success600"
+      rounded="md"
+      flexDir="column"
+      m="1rem"
+      onClick={()=> showModal.onClick(true)}
+    >
+      Resubmit Form
+    </Button>
+    <ReturnModal
+      isOpen={showModal.value}
+      onClose={()=> showModal.onClick(false)}
+      Handlesubmit={Handlesubmit}
+      downloadLink={downloadLink}
+    />
       
-    <Anchor flexWrap="wrap" m="1rem" flexDir="column" p="1rem" download={filename} href={downloadLink}>
-      <Button >
-        <Text>Download raw data for future edits</Text>
+    <Anchor m="1rem"  download={filename} href={downloadLink}>
+      <Button>
+        <Text>Download raw data</Text>
       </Button>
     </Anchor>
+</Div>
+    
   </Div>
   )
 }

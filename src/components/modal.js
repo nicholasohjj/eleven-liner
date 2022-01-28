@@ -60,7 +60,7 @@ const ReturnModal = ({ isOpen, onClose, Handlesubmit }) => {
           flexWrap="wrap"
         />
         <Text p={{ l: "0.5rem", t: "0.25rem" }} textSize="subheader">
-          Are you sure you would like to resubmit your form? All data will be lost. Download your raw data here for future edits!
+          Are you sure you would like to resubmit your form? All data will be lost. Download your raw data for future edits!
         </Text>
       </Div>
       <Div d="flex" justify="flex-end">

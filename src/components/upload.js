@@ -92,12 +92,18 @@ const Upload = ({
         flexDir="column"
         p="1rem"
         >
-        <Text textWeight={{ xs: '400', md: '500' }}>Upload your existing raw data here, if any. (.txt file)</Text>
-         <Input type="file"
-        name="fileupload"
-       accept=".txt"
-       onChange={Handlechange}/>
-       <Button onClick ={Handlesubmit}>Upload</Button>
+        <Text p='1rem' textWeight={{ xs: '400', md: '500' }}>Upload your existing raw data here, if any. (.txt file)</Text>
+         <Input
+            type="file"
+            name="fileupload"
+            accept=".txt"
+            onChange={Handlechange}
+        />
+       <Button 
+        p='1rem'
+        m="1rem"
+        flexWrap="nowrap"
+        onClick ={Handlesubmit}>Upload raw data</Button>
        </Div>
     )
 }
