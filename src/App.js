@@ -3,8 +3,8 @@ import {
   useHistory,
   Switch, Route,
 } from 'react-router-dom';
-import Form from './form';
-import Result from './result';
+import Form from './components/form'
+import Result from './components/result';
 
 function App() {
   const history = useHistory();
@@ -19,6 +19,7 @@ function App() {
   return (
     <Switch>
       <Route path="/result">
+
         <Result
           currentDate={currentinfo.currentDate}
           currentTime={currentinfo.currentTime}

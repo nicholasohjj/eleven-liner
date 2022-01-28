@@ -80,7 +80,7 @@ function Form({ addNew }) {
 
   return (
     <Div
-      bg="gray200"
+      bg="gray300"
       d={{ xs: 'block', md: 'flex' }}
       align={{ xs: 'space-around', lg: 'center' }}
       flexWrap="wrap"
