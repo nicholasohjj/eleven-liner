@@ -2,9 +2,9 @@ import React from 'react';
 import {
   Button, Div, Text, Input, Label, Radiobox, Textarea,
 } from 'atomize';
-import { Radio } from './hooks';
-import CurrentTime from './components/time';
-import Newdate from './components/reusable/newdate';
+import { Radio } from '../hooks';
+import CurrentTime from './time';
+import Newdate from './reusable/newdate';
 
 function Form({ addNew }) {
   const Handlesubmit = () => {

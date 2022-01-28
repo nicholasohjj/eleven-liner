@@ -18,7 +18,6 @@
 
 ## Key Features
 
-* 
 * Flavored with Atomise UI
 * Web Progressive App mode
   - Add to your home screen and use it just like a mobile application.
